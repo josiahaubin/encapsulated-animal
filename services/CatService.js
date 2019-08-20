@@ -52,6 +52,11 @@ export default class CatService {
     _cat.petCount--
     checkMood()
   }
+  //Resets the pet count and checks it mood
+  catnip() {
+    _cat.petCount = 0
+    checkMood()
+  }
 
   get Cat() {
     return _cat

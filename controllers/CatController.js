@@ -35,4 +35,9 @@ export default class CatController {
     _catService.feed()
     draw()
   }
+  //Let the service know that the user wants to use the nip
+  catnip() {
+    _catService.catnip()
+    draw()
+  }
 }
