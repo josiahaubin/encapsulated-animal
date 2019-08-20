@@ -18,4 +18,10 @@ export default class CatController {
     //console.log("Hello from cat controller")
     draw()
   }
+
+  //Let the service know that the user wants to pet the cat
+  pet() {
+    _catService.pet()
+    draw()
+  }
 }

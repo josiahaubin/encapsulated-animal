@@ -9,6 +9,10 @@ export default class CatService {
     //console.log("Hello from cat service")
   }
 
+  pet() {
+    _cat.petCount++
+  }
+
   get Cat() {
     return _cat
   }
