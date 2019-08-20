@@ -8,4 +8,8 @@ export default class CatService {
   constructor() {
     //console.log("Hello from cat service")
   }
+
+  get Cat() {
+    return _cat
+  }
 }
