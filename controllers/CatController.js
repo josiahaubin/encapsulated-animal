@@ -1,5 +1,4 @@
 import CatService from "../services/CatService.js";
-
 //PRIVATE
 let _catService = new CatService()
 
