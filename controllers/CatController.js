@@ -6,11 +6,17 @@ let _catService = new CatService()
 function draw() {
   let catNameElem = document.querySelector('#catName')
   let catPetCountElem = document.querySelector('#catPetCount')
+  let catMoodElem = document.querySelector('#catMood')
+  let catImgElem = document.querySelector('#catImg')
   let cat = _catService.Cat
 
   catNameElem.textContent = cat.name
   catPetCountElem.textContent = cat.petCount.toString()
+  catMoodElem.textContent = cat.mood
+  // @ts-ignore
+  catImgElem.src = cat.img
 }
+
 
 //PUBLIC
 export default class CatController {
