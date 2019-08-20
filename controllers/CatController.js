@@ -30,4 +30,9 @@ export default class CatController {
     _catService.pet()
     draw()
   }
+  //Let the service know that the user wants to feed the cat
+  feed() {
+    _catService.feed()
+    draw()
+  }
 }

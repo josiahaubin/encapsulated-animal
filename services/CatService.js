@@ -3,6 +3,7 @@ import Cat from "../models/Cat.js";
 //PRIVATE
 let _cat = new Cat("Nacho")
 
+//This function checks the pet count and sets the appropriate mood and img
 function checkMood() {
   if (_cat.petCount > 20) {
     _cat.mood = "Bloodthristy"
@@ -16,8 +17,23 @@ function checkMood() {
   } else if (_cat.petCount > 5) {
     _cat.mood = "Annoyed"
     _cat.img = "http://www.top13.net/wp-content/uploads/2017/01/angry-cat-photography-4.jpg"
+  } else {
+    _cat.mood = "Happy"
+    _cat.img = "http://i0.kym-cdn.com/photos/images/newsfeed/000/100/128/happycat.gif?131899246"
   }
+  checkRange()
   return _cat.mood, _cat.img
+}
+
+//This function checks the pet count is higher than 25/ lower than zero and resets them appropriately
+function checkRange() {
+  if (_cat.petCount > 25) {
+    _cat.petCount = 25
+    return _cat.petCount
+  } else if (_cat.petCount < 0) {
+    _cat.petCount = 0
+    return _cat.petCount
+  }
 }
 
 
@@ -26,9 +42,14 @@ export default class CatService {
   constructor() {
     //console.log("Hello from cat service")
   }
-
+  //Pets the cat and checks its mood
   pet() {
     _cat.petCount++
+    checkMood()
+  }
+  //Feeds the cat, which reduces pet count and checks it mood
+  feed() {
+    _cat.petCount--
     checkMood()
   }
 
